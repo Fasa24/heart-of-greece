@@ -18,10 +18,9 @@ Simple food, generously served, and always meant to be shared.
 
 ## 📚 Table of Contents
 
-1. [Description](#description)
-2. [Getting Started](#getting-started)
-3. [Usage](#usage)
-4. [Project Structure](#project-structure)
+1. [Description](#-description)
+2. [Getting Started](#️-getting-started)
+3. [Project Structure](#️-project-structure)
 
 ## ⬇️ Getting Started
 
