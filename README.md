@@ -41,8 +41,9 @@ Once the repository has been cloned, the project can be viewed using either of t
 | File/Directory | Description |
 | -------------- | ----------- |
 | `index.html` | Main webpage for Heart of Greece |
+| `assets/files/` | General assets |
 | `assets/icons/` | Icons and icon-related assets |
-| `assets/img/` | Images and other visual assets used throughout the website |
+| `assets/img/` | Images and other visual assets |
 | `css/` | Stylesheets used to design the website |
 | `pages/` | Additional website pages |
 | `.gitignore` | Specifies files and directories that should not be tracked by Git |
