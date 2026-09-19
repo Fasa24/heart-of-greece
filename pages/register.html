@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Heart of Greece</title>
+</head>
+
+<body>
+    <header style="background-color: #075985;">
+        <img src="../assets/icons/heart-of-greece-icon.png" width="150" height="auto" alt="HoG Icon">
+        <h1 style="color: white;">Heart of Greece</h1>
+        <h2 style="color: white;">Καρδιά της Ελλάδας</h2>
+
+        <nav style="color: white;" aria-label="Main Navigation">
+            <a href="../index.html" target="_blank" rel="noopener" title="Home" style="color: white;">Home</a>
+            <a href="menu.html" target="_blank" rel="noopener" title="Check our Menu" style="color: white;">Menu</a>
+            <a href="reservations.html" target="_blank" rel="noopener" title="Come to the Table" style="color: white;">Reservations</a>
+            <a href="gallery.html" target="_blank" rel="noopener" title="Meet Us" style="color: white;">Gallery</a>
+            <a href="contact.html" target="_blank" rel="noopener" title="Contact Us" style="color: white;">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Create your Account</h1>
+        <p>Register to book your table and save your favorite dishes.</p>
+
+        <form action="#" method="POST">
+                
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required minlength="3" placeholder="e.g. Socrates" autofocus>
+                </div>
+
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required placeholder="email@example.com">
+                </div>
+
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="2112345678" aria-describedby="phone-help">
+                    <small id="phone-help">Enter 10 digits without spaces or special characters (e.g., 2112345678).</small>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Restaurant Preferences</legend>
+
+                <div>
+                    <label for="diet">Dietary Preference:</label>
+                    <select id="diet" name="diet">
+                        <option value="none" selected>None</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="nut-allergy">Nut Allergy</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="favoriteDish">Favorite Greek Dish (Optional):</label>
+                    <input type="text" id="favoriteDish" name="favoriteDish" list="dish-list" placeholder="Choose or type one">
+                    <datalist id="dish-list">
+                        <option value="Classic Moussaka"></option>
+                        <option value="Chicken Souvlaki"></option>
+                        <option value="Baklava"></option>
+                    </datalist>
+                </div>
+            </fieldset>
+
+            <button type="submit">Create Account</button>
+            <button type="reset">Clear Form</button>
+                
+        </form>
+    </main>
+
+</body>
+</html>
