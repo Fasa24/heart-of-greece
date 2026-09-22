@@ -1,0 +1,17 @@
+* {
+    font-style: italic;
+}
+
+header {
+    background-color: #075985;
+}
+
+.section-color {
+    background-color: #3F6212;
+}
+
+#center-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
