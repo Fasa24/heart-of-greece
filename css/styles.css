@@ -1,13 +1,43 @@
-* {
-    font-style: italic;
+@font-face {
+    font-family: "Cormorant Garamond";
+    src: url("../assets/files/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
+    font-weight: 300 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Atkinson Hyperlegible Next";
+    src: url("../assets/files/AtkinsonHyperlegibleNext-VariableFont_wght.ttf") format("truetype");
+    font-weight: 200 800;
+    font-style: normal;
+}
+
+:root {
+    --baltic-blue: #075985;
+    --olive-leaf: #3F6212;
+    --floral-white: #F7F3E8;
+    --ink-black: #17202A;
+
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Atkinson Hyperlegible Next", sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--ink-black);
 }
 
 header {
-    background-color: #075985;
+    background-color: var(--baltic-blue);
+    font-family: var(--font-heading);
 }
 
-.section-color {
-    background-color: #3F6212;
+header nav {
+    font-family: var(--font-body);
+}
+
+.table-color {
+    background-color: var(--olive-leaf);
 }
 
 #center-table {
