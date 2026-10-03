@@ -40,6 +40,118 @@ header nav {
     background-color: var(--olive-leaf);
 }
 
+.hero {
+    min-height: 350px;
+    padding: 64px 24px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/img/pork-souvlaki.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+     margin: 0;
+    color: var(--floral-white);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+.hero-text {
+    margin: 8px 0;
+    font-size: 1.25rem;
+    color: var(--floral-white);
+    text-shadow: 0 1px 4px rgba(0,0,0, 0.8);
+    text-align: center;
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.menu-table td{
+    width: 33%;
+    padding: 20px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.menu-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: white;
+    color: var(--olive-leaf);
+    border: 2px solid var(--olive-leaf);
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    margin: 12px auto;
+    padding: 0;
+    border: 1px solid var(--floral-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card-imagen {
+    display: block;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 0px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card-titulo {
+    margin: 4px 0;
+    font-size: 1.25rem;
+    color: var(--baltic-blue);
+}
+
+.history {
+    background-color: var(--floral-white);
+    width: 100%;
+    padding: 60px 10%;
+    box-sizing: border-box;
+}
+
+.history table {
+    width: 100%;
+}
+
+.history td {
+    padding: 20px;
+    vertical-align: middle;
+    font-size: 1.25rem;
+}
+
+.history h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 2.50rem;
+    color: var(--baltic-blue);
+}
+
+.history img {
+    width: 400px;
+    height: 300px;
+    border-radius: 8px;
+}
+
 #center-table {
     display: flex;
     justify-content: center;
