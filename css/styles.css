@@ -55,7 +55,7 @@ header nav {
 }
 
 .hero-title {
-     margin: 0;
+    margin: 0;
     color: var(--floral-white);
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     text-align: center;
@@ -107,7 +107,7 @@ header nav {
     text-align: center;
 }
 
-.card-imagen {
+.card-image {
     display: block;
     width: 100%;
     height: 200px;
@@ -116,7 +116,7 @@ header nav {
     border-radius: 4px;
 }
 
-.card-titulo {
+.card-title {
     margin: 4px 0;
     font-size: 1.25rem;
     color: var(--baltic-blue);
