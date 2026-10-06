@@ -6,55 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Heart of Greece</title>
     <link rel="icon" href="../assets/icons/heart-of-greece-square-icon.png">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-    <header style="background-color: #075985;">
-        <img src="../assets/icons/heart-of-greece-icon.png" width="150" height="auto" alt="HoG Icon">
-        <h1 style="color: white;">Heart of Greece</h1>
-        <h2 style="color: white;">Καρδιά της Ελλάδας</h2>
+    <header class="header">
+        <div class="header__brand">
+            <img class="header__logo" src="../assets/icons/heart-of-greece-icon.png" width="80" height="auto" alt="HoG Icon">
+            <div class="header__titles">
+                <h1 class="header__title">Heart of Greece</h1>
+                <h2 class="header__subtitle">Καρδιά της Ελλάδας</h2>
+            </div>
+        </div>
 
-        <nav style="color: white;" aria-label="Main Navigation">
-            <a href="../index.html" target="_blank" rel="noopener" title="Home" style="color: white;">Home</a>
-            <a href="menu.html" target="_blank" rel="noopener" title="Check our Menu" style="color: white;">Menu</a>
-            <a href="reservations.html" target="_blank" rel="noopener" title="Come to the Table" style="color: white;">Reservations</a>
-            <a href="gallery.html" target="_blank" rel="noopener" title="Meet Us" style="color: white;">Gallery</a>
-            <a href="contact.html" target="_blank" rel="noopener" title="Contact Us" style="color: white;">Contact</a>
+        <nav class="header__nav" aria-label="Main Navigation">
+            <a class="header__link" href="../index.html" target="_blank" rel="noopener" title="Home">Home</a>
+            <a class="header__link" href="menu.html" target="_blank" rel="noopener" title="Check our Menu">Menu</a>
+            <a class="header__link" href="reservations.html" target="_blank" rel="noopener" title="Come to the Table">Reservations</a>
+            <a class="header__link" href="gallery.html" target="_blank" rel="noopener" title="Meet Us">Gallery</a>
+            <a class="header__link" href="contact.html" target="_blank" rel="noopener" title="Contact Us">Contact</a>
         </nav>
     </header>
 
-    <main>
-        <h1>Create your Account</h1>
-        <p>Register to book your table and save your favorite dishes.</p>
+    <main class="register">
+        <h1 class="register__title">Create your Account</h1>
+        <p class="register__subtitle">Register to book your table and save your favorite dishes.</p>
 
-        <form action="#" method="POST">
-                
-            <fieldset>
-                <legend>Personal Information</legend>
+        <form class="form" action="#" method="POST">
 
-                <div>
-                    <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" required minlength="3" placeholder="e.g. Socrates" autofocus>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Personal Information</legend>
+
+                <div class="form__group">
+                    <label class="form__label" for="fullName">Full Name:</label>
+                    <input class="form__input" type="text" id="fullName" name="fullName" required minlength="3" placeholder="e.g. Socrates" autofocus>
                 </div>
 
-                <div>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required placeholder="email@example.com">
+                <div class="form__group">
+                    <label class="form__label" for="email">Email Address:</label>
+                    <input class="form__input" type="email" id="email" name="email" required placeholder="email@example.com">
                 </div>
 
-                <div>
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="2112345678" aria-describedby="phone-help">
-                    <small id="phone-help">Enter 10 digits without spaces or special characters (e.g., 2112345678).</small>
+                <div class="form__group">
+                    <label class="form__label" for="phone">Phone Number:</label>
+                    <input class="form__input" type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="2112345678" aria-describedby="phone-help">
+                    <small class="form__help" id="phone-help">Enter 10 digits without spaces or special characters (e.g., 2112345678).</small>
                 </div>
             </fieldset>
 
-            <fieldset>
-                <legend>Restaurant Preferences</legend>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Restaurant Preferences</legend>
 
-                <div>
-                    <label for="diet">Dietary Preference:</label>
-                    <select id="diet" name="diet">
+                <div class="form__group">
+                    <label class="form__label" for="diet">Dietary Preference:</label>
+                    <select class="form__select" id="diet" name="diet">
                         <option value="none" selected>None</option>
                         <option value="vegetarian">Vegetarian</option>
                         <option value="vegan">Vegan</option>
@@ -63,9 +68,9 @@
                     </select>
                 </div>
 
-                <div>
-                    <label for="favoriteDish">Favorite Greek Dish (Optional):</label>
-                    <input type="text" id="favoriteDish" name="favoriteDish" list="dish-list" placeholder="Choose or type one">
+                <div class="form__group">
+                    <label class="form__label" for="favoriteDish">Favorite Greek Dish (Optional):</label>
+                    <input class="form__input" type="text" id="favoriteDish" name="favoriteDish" list="dish-list" placeholder="Choose or type one">
                     <datalist id="dish-list">
                         <option value="Classic Moussaka"></option>
                         <option value="Chicken Souvlaki"></option>
@@ -74,9 +79,11 @@
                 </div>
             </fieldset>
 
-            <button type="submit">Create Account</button>
-            <button type="reset">Clear Form</button>
-                
+            <div class="form__actions">
+                <button class="form__button form__button--submit" type="submit">Create Account</button>
+                <button class="form__button form__button--reset" type="reset">Clear Form</button>
+            </div>
+
         </form>
     </main>
 

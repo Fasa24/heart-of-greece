@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <meta name="description" content="Traditional recipes, honest ingredients, and generous food to share around the table.">
     <meta name="author" content="Abraham Eli, Favio Emiliano, Guillermo Green">
     <meta name="keywords" content="greek restaurant, greek cuisine, traditional greek food, recipes, mediterranean food">
@@ -28,57 +28,63 @@
 </head>
 
 <body>
-    <header>
-        <img src="assets/icons/heart-of-greece-icon.png" width="150" height="auto" alt="HoG Icon">
-        <h1 style="color: white;">Heart of Greece</h1>
-        <h2 style="color: white;">Καρδιά της Ελλάδας</h2>
+    <header class="header">
+        <div class="header__brand">
+            <img class="header__logo" src="assets/icons/heart-of-greece-icon.png" width="80" height="auto" alt="HoG Icon">
+            <div class="header__titles">
+                <h1 class="header__title">Heart of Greece</h1>
+                <h2 class="header__subtitle">Καρδιά της Ελλάδας</h2>
+            </div>
+        </div>
 
-        <nav style="color: white;">
-            <a href="pages/menu.html" target="_blank" rel="noopener" title="Check our Menu" style="color: white;">Menu</a>
-            <a href="pages/reservations.html" target="_blank" rel="noopener" title="Come to the Table" style="color: white;">Reservations</a>
-            <a href="pages/gallery.html" target="_blank" rel="noopener" title="Meet Us" style="color: white;">Gallery</a>
-            <a href="pages/contact.html" target="_blank" rel="noopener" title="Contact Us" style="color: white;">Contact</a>
-            <a href="pages/account.html" target="_blank" rel="noopener" title="Account Info" style="color: white;">Account</a>
-            <a href="pages/register.html" target="_blank" rel="noopener" title="Create your Account" style="color: white;">Register</a>
+        <nav class="header__nav">
+            <a class="header__link" href="pages/menu.html" target="_blank" rel="noopener" title="Check our Menu">Menu</a>
+            <a class="header__link" href="pages/reservations.html" target="_blank" rel="noopener" title="Come to the Table">Reservations</a>
+            <a class="header__link" href="pages/gallery.html" target="_blank" rel="noopener" title="Meet Us">Gallery</a>
+            <a class="header__link" href="pages/contact.html" target="_blank" rel="noopener" title="Contact Us">Contact</a>
+            <a class="header__link" href="pages/account.html" target="_blank" rel="noopener" title="Account Info">Account</a>
+            <a class="header__link" href="pages/register.html" target="_blank" rel="noopener" title="Create your Account">Register</a>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h2 class="hero-title">A Taste of Home</h2>
-            <article class="hero-text">
+            <h2 class="hero__title">A Taste of Home</h2>
+            <article class="hero__text">
                 <p>
-                    <strong>Traditional</strong> recipes, <strong>honest</strong> ingredients, 
+                    <strong>Traditional</strong> recipes, <strong>honest</strong> ingredients,
                     <br> and <strong>generous</strong> food made to be shared around the table.
                 </p>
             </article>
+            <a href="pages/reservations.html" class="hero__button">Reserve your table</a>
         </section>
 
         <section class="history">
-        <table>
-            <tbody>
-                <tr>
-                    <td rowspan="2">
-                        <img src="assets/img/santorini.png"
-                         width="400"
-                         height="auto"
-                         alt="Greek Landscape"
-                         loading="lazy">
-                    </td>
-                    <td>
-                        <h2>Our Story</h2>
-                    </td>
+            <table class="history__table">
+                <tbody>
+                    <tr>
+                        <td rowspan="2" class="history__cell history__cell--image">
+                            <img class="history__image"
+                                 src="assets/img/santorini.png"
+                                 width="400"
+                                 height="auto"
+                                 alt="Greek Landscape"
+                                 loading="lazy">
+                        </td>
+                        <td class="history__cell">
+                            <h2 class="history__title">Our Story</h2>
+                        </td>
                     </tr>
                     <tr>
-                        <td>
-                            <p>
+                        <td class="history__cell">
+                            <p class="history__text">
                                 Rooted in traditional Greek cooking, <strong>Heart
                                 of Greece</strong> is a place for honest food,
                                 warm hospitality, and good company.
                                 We prepare familiar recipes with quality ingredients
                                 and the same care we believe they deserve.
                             </p>
-                            <p>
+                            <p class="history__text">
                                 Simple food, generously served, and always meant to
                                 be shared.
                             </p>
@@ -88,15 +94,15 @@
             </table>
         </section>
 
-        <section>
-            <table class="menu-table">
+        <section class="menu-section">
+            <table class="menu-section__table">
                 <thead>
                     <tr>
-                        <th colspan="3">
-                            <h2>Taste the Tradition</h2>
-                            <p>
-                            A selection of beloved Greek classics, prepared with
-                            time-honored recipes and the flavors of home.
+                        <th colspan="3" class="menu-section__header">
+                            <h2 class="menu-section__title">Taste the Tradition</h2>
+                            <p class="menu-section__subtitle">
+                                A selection of beloved Greek classics, prepared with
+                                time-honored recipes and the flavors of home.
                             </p>
                         </th>
                     </tr>
@@ -104,31 +110,30 @@
 
                 <tbody>
                     <tr>
-                        <td>
+                        <td class="menu-section__cell">
                             <article class="card">
-                                <figure>
-                                    <img src="assets/img/moussaka.png" width="200" height="auto" alt="Greek Moussaka" loading="lazy" title="Greek Moussaka" class="card-image">
-                                    <h3 class="card-title">Classic Moussaka €15</h3>
-                                    <figcaption>Layers of roasted eggplant, potatoes, and spiced ground beef, crowned with a rich, golden béchamel sauce.</figcaption>
-                                </figure>
-                                
-                            </article>
-                        </td>
-                        <td>
-                            <article class="card">
-                                <figure>
-                                    <img src="assets/img/chicken-souvlaki.png" width="200" height="auto" alt="Chicken Souvlaki" loading="lazy" title="Chicken Souvlaki" class="card-image">
-                                    <h3 class="card-title">Chicken Souvlaki €14</h3>
-                                    <figcaption>Tender pieces of grilled chicken marinated with olive oil, lemon, and oregano, served with warm pita and creamy tzatziki.</figcaption>
+                                <figure class="card__figure">
+                                    <img src="assets/img/moussaka.png" width="200" height="auto" alt="Greek Moussaka" loading="lazy" title="Greek Moussaka" class="card__image">
+                                    <h3 class="card__title">Classic Moussaka €15</h3>
+                                    <figcaption class="card__caption">Layers of roasted eggplant, potatoes, and spiced ground beef, crowned with a rich, golden béchamel sauce.</figcaption>
                                 </figure>
                             </article>
                         </td>
-                        <td>
+                        <td class="menu-section__cell">
                             <article class="card">
-                                <figure>
-                                    <img src="assets/img/greek-baklava.png" width="200" height="auto" alt="Baklava" loading="lazy" title="Baklava" class="card-image">
-                                    <h3 class="card-title">Baklava €7</h3>
-                                    <figcaption>Layers of crisp phyllo pastry filled with chopped nuts and warm spices, baked until golden and finished with a fragrant sweet syrup.</figcaption>
+                                <figure class="card__figure">
+                                    <img src="assets/img/chicken-souvlaki.png" width="200" height="auto" alt="Chicken Souvlaki" loading="lazy" title="Chicken Souvlaki" class="card__image">
+                                    <h3 class="card__title">Chicken Souvlaki €14</h3>
+                                    <figcaption class="card__caption">Tender pieces of grilled chicken marinated with olive oil, lemon, and oregano, served with warm pita and creamy tzatziki.</figcaption>
+                                </figure>
+                            </article>
+                        </td>
+                        <td class="menu-section__cell">
+                            <article class="card">
+                                <figure class="card__figure">
+                                    <img src="assets/img/greek-baklava.png" width="200" height="auto" alt="Baklava" loading="lazy" title="Baklava" class="card__image">
+                                    <h3 class="card__title">Baklava €7</h3>
+                                    <figcaption class="card__caption">Layers of crisp phyllo pastry filled with chopped nuts and warm spices, baked until golden and finished with a fragrant sweet syrup.</figcaption>
                                 </figure>
                             </article>
                         </td>
@@ -136,42 +141,41 @@
                 </tbody>
             </table>
 
-            <button class="menu-button">View Full Menu</button>
-
+            <button class="menu-section__button">View Full Menu</button>
         </section>
 
-        <section class="table-color">
-            <h2 style="color: white;">Come to the Table</h2>
+        <section class="cta">
+            <h2 class="cta__title">Come to the Table</h2>
 
-            <p style="color: white;">
+            <p class="cta__text">
                 Reserve your table and enjoy traditional Greek cooking,
                 warm hospitality, and a meal made to be shared.
             </p>
         </section>
 
-        <hr>
+        <hr class="divider">
     </main>
 
-    <footer>
-        <table id="center-table" cellpadding="15">
+    <footer class="footer">
+        <table class="footer__table" cellpadding="15">
             <tbody>
                 <tr>
-                    <td>
-                        <p>© Heart of Greece 2026</p>
+                    <td class="footer__cell">
+                        <p class="footer__text">© Heart of Greece 2026</p>
                     </td>
-                    <td>
-                        <p>Privacy Policy</p>
+                    <td class="footer__cell">
+                        <p class="footer__text">Privacy Policy</p>
                     </td>
-                    <td>
-                        <p>Terms of Service</p>
+                    <td class="footer__cell">
+                        <p class="footer__text">Terms of Service</p>
                     </td>
-                    <td>
-                        <a href="mailto:contact@heartofgreece.com">Contact Us</a>
+                    <td class="footer__cell">
+                        <a class="footer__link" href="mailto:contact@heartofgreece.com">Contact Us</a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </footer>
-    
+
 </body>
 </html>
