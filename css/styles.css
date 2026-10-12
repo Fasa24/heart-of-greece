@@ -12,6 +12,7 @@
     font-style: normal;
 }
 
+
 :root {
     --baltic-blue: #075985;
     --olive-leaf: #3F6212;
@@ -21,9 +22,9 @@
     --font-heading: "Cormorant Garamond", serif;
     --font-body: "Atkinson Hyperlegible Next", sans-serif;
 
-    --espaciado: 16px;
-    --espaciado-s: 8px;
-    --espaciado-l: 24px;
+    --spacing: 16px;
+    --spacing-s: 8px;
+    --spacing-l: 24px;
     --radio-borde: 8px;
 }
 
@@ -193,7 +194,7 @@ body {
 .history {
     background-color: var(--floral-white);
     width: 100%;
-    padding: var(--espaciado-l) var(--espaciado);
+    padding: var(--spacing-l) var(--spacing);
 }
 
 .history__table {
@@ -204,13 +205,13 @@ body {
 .history__table tbody {
     display: flex;
     flex-direction: column;
-    gap: var(--espaciado);
+    gap: var(--spacing-l);
 }
 
 .history__table tr {
     display: flex;
     flex-direction: column;
-    gap: var(--espaciado-s);
+    gap: var(--spacing-s);
 }
 
 .history__cell {
