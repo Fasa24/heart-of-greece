@@ -498,8 +498,113 @@ body {
     background-color: #CBD5E1;
 }
 
+
+/* MÓVIL*/
+@media (max-width: 767px) {
+
+    .header {
+        padding: 12px 16px;
+    }
+
+    .header__logo {
+        width: 60px;
+    }
+
+    .header__title {
+        font-size: 1.4rem;
+    }
+
+    .header__nav {
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 48px 16px;
+        background-attachment: scroll;
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__text {
+        font-size: 1.1rem;
+    }
+
+    .history {
+        padding: 32px 16px;
+    }
+
+    .history__cell {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .history__cell--image {
+        width: auto;
+    }
+
+    .history__image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .history__title {
+        font-size: 2rem;
+    }
+
+    .menu-section__items {
+        padding: 12px 0;
+        gap: 16px;
+    }
+
+    .menu-section__items .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .card__figure {
+        height: auto;
+    }
+
+    .card__image {
+        height: 200px;
+    }
+
+    .card__caption {
+        padding-bottom: 16px;
+    }
+
+    .register {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+
+    .form__actions {
+        flex-direction: column;
+    }
+
+    .form__button {
+        width: 100%;
+    }
+
+    .footer__table {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+/* TABLET*/
 @media (min-width: 768px) {
-    :root {
+    #cellphone :root {
         --spacing: 20px;
     }
 
@@ -529,6 +634,7 @@ body {
     }
 }
 
+/* DESK*/
 @media (min-width: 1280px) {
     :root {
         --spacing: 32px;
