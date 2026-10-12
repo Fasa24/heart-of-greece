@@ -21,7 +21,6 @@
     --font-heading: "Cormorant Garamond", serif;
     --font-body: "Atkinson Hyperlegible Next", sans-serif;
 
-    /* Variables de espaciado y tamaños repetidos (Requerido) */
     --espaciado: 16px;
     --espaciado-s: 8px;
     --espaciado-l: 24px;
@@ -191,9 +190,6 @@ body {
     outline: 3px solid var(--floral-white);
 }
 
-/* ==========================================================
-   SECCIÓN HISTORIA (Mobile-First: Base en Móvil usando Flexbox)
-   ========================================================== */
 .history {
     background-color: var(--floral-white);
     width: 100%;
@@ -205,7 +201,6 @@ body {
     border-collapse: collapse;
 }
 
-/* Flexbox interno en móvil para que los elementos fluyan verticalmente sin desbordarse */
 .history__table tbody {
     display: flex;
     flex-direction: column;
