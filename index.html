@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body class="page-layout">
     <header class="header">
         <div class="header__brand">
             <img class="header__logo" src="assets/icons/heart-of-greece-icon.png" alt="HoG Icon">
@@ -47,7 +47,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="main">
         <section class="hero">
             <h2 class="hero__title">A Taste of Home</h2>
             <article class="hero__text">
@@ -95,51 +95,39 @@
         </section>
 
         <section class="menu-section">
-            <table class="menu-section__table">
-                <thead>
-                    <tr>
-                        <th colspan="3" class="menu-section__header">
-                            <h2 class="menu-section__title">Taste the Tradition</h2>
-                            <p class="menu-section__subtitle">
-                                A selection of beloved Greek classics, prepared with
-                                time-honored recipes and the flavors of home.
-                            </p>
-                        </th>
-                    </tr>
-                </thead>
+            <div class="menu-section__header">
+                <h2 class="menu-section__title">Taste the Tradition</h2>
+                <p class="menu-section__subtitle">
+                    A selection of beloved Greek classics, prepared with
+                    time-honored recipes and the flavors of home.
+                </p>
+            </div>
 
-                <tbody>
-                    <tr>
-                        <td class="menu-section__cell">
-                            <article class="card">
-                                <figure class="card__figure">
-                                    <img src="assets/img/moussaka.png" width="200" height="auto" alt="Greek Moussaka" loading="lazy" title="Greek Moussaka" class="card__image">
-                                    <h3 class="card__title">Classic Moussaka €15</h3>
-                                    <figcaption class="card__caption">Layers of roasted eggplant, potatoes, and spiced ground beef, crowned with a rich, golden béchamel sauce.</figcaption>
-                                </figure>
-                            </article>
-                        </td>
-                        <td class="menu-section__cell">
-                            <article class="card">
-                                <figure class="card__figure">
-                                    <img src="assets/img/chicken-souvlaki.png" width="200" height="auto" alt="Chicken Souvlaki" loading="lazy" title="Chicken Souvlaki" class="card__image">
-                                    <h3 class="card__title">Chicken Souvlaki €14</h3>
-                                    <figcaption class="card__caption">Tender pieces of grilled chicken marinated with olive oil, lemon, and oregano, served with warm pita and creamy tzatziki.</figcaption>
-                                </figure>
-                            </article>
-                        </td>
-                        <td class="menu-section__cell">
-                            <article class="card">
-                                <figure class="card__figure">
-                                    <img src="assets/img/greek-baklava.png" width="200" height="auto" alt="Baklava" loading="lazy" title="Baklava" class="card__image">
-                                    <h3 class="card__title">Baklava €7</h3>
-                                    <figcaption class="card__caption">Layers of crisp phyllo pastry filled with chopped nuts and warm spices, baked until golden and finished with a fragrant sweet syrup.</figcaption>
-                                </figure>
-                            </article>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="menu-section__items">
+                <article class="card">
+                    <figure class="card__figure">
+                        <img src="assets/img/moussaka.png" width="200" height="auto" alt="Greek Moussaka" loading="lazy" title="Greek Moussaka" class="card__image">
+                        <h3 class="card__title">Classic Moussaka €15</h3>
+                        <figcaption class="card__caption">Layers of roasted eggplant, potatoes, and spiced ground beef, crowned with a rich, golden béchamel sauce.</figcaption>
+                    </figure>
+                </article>
+
+                <article class="card">
+                    <figure class="card__figure">
+                        <img src="assets/img/chicken-souvlaki.png" width="200" height="auto" alt="Chicken Souvlaki" loading="lazy" title="Chicken Souvlaki" class="card__image">
+                        <h3 class="card__title">Chicken Souvlaki €14</h3>
+                        <figcaption class="card__caption">Tender pieces of grilled chicken marinated with olive oil, lemon, and oregano, served with warm pita and creamy tzatziki.</figcaption>
+                    </figure>
+                </article>
+
+                <article class="card">
+                    <figure class="card__figure">
+                        <img src="assets/img/greek-baklava.png" width="200" height="auto" alt="Baklava" loading="lazy" title="Baklava" class="card__image">
+                        <h3 class="card__title">Baklava €7</h3>
+                        <figcaption class="card__caption">Layers of crisp phyllo pastry filled with chopped nuts and warm spices, baked until golden and finished with a fragrant sweet syrup.</figcaption>
+                    </figure>
+                </article>
+            </div>
 
             <button class="menu-section__button">View Full Menu</button>
         </section>
