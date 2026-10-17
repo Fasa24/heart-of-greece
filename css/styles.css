@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: "Cormorant Garamond";
     src: url("../assets/files/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
@@ -12,8 +13,9 @@
     font-style: normal;
 }
 
-
 :root {
+    color-scheme: light;
+    
     --baltic-blue: #075985;
     --olive-leaf: #3F6212;
     --floral-white: #F7F3E8;
@@ -26,7 +28,32 @@
     --spacing-s: 8px;
     --spacing-l: 24px;
     --radio-borde: 8px;
+
+    --page-bg: #FFFFFF;
+    --surface-bg: var(--floral-white);
+    --text-color: var(--ink-black);
+    --muted-text: #555555;
+    --border-color: #CCCCCC;
 }
+
+/* Dark mode
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+
+        --baltic-blue: #075985;
+        --olive-leaf: #3F6212;
+        --floral-white: #F7F3E8;
+        --ink-black: #E5E7EB;
+
+        --page-bg: #111827;
+        --surface-bg: #1F2937;
+        --text-color: #E5E7EB;
+        --muted-text: #B0BAC8;
+        --border-color: #4B5563;
+    }
+}
+*/
 
 * {
     margin: 0;
@@ -42,6 +69,7 @@
 body {
     font-family: var(--font-body);
     color: var(--ink-black);
+    background-color: var(--page-bg);
 }
 
 .page-layout {
@@ -99,7 +127,7 @@ body {
 
 .header__title {
     color: var(--floral-white);
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 2vw + 0.8rem, 1.8rem);
     line-height: 1.1;
     margin: 0;
 }
@@ -107,7 +135,7 @@ body {
 .header__subtitle {
     font-family: var(--font-body);
     color: var(--floral-white);
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 0.5vw + 0.8rem, 1rem);
     font-weight: 450;
     margin: 0;
 }
@@ -124,7 +152,7 @@ body {
     color: var(--floral-white);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: clamp(0.875rem, 0.5vw + 0.75rem, 0.95rem);
     transition: opacity 0.2s ease, text-decoration 0.2s ease;
 }
 
@@ -154,12 +182,12 @@ body {
     color: var(--floral-white);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     text-align: center;
-    font-size: max(2rem, 3vw);
+    font-size: clamp(2rem, 3vw, 3rem);
 }
 
 .hero__text {
     margin: 0;
-    font-size: 1.35rem;
+    font-size: clamp(1.1rem, 1vw + 1rem, 1.35rem);
     color: var(--floral-white);
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
     text-align: center;
@@ -180,11 +208,11 @@ body {
 
 .hero__button:hover {
     background-color: #033A59;
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.05) rotate(-1deg);
 }
 
 .hero__button:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.98) rotate(0deg);
 }
 
 .hero__button:focus-visible {
@@ -192,7 +220,7 @@ body {
 }
 
 .history {
-    background-color: var(--floral-white);
+    background-color: var(--surface-bg);
     width: 100%;
     padding: var(--spacing-l) var(--spacing);
 }
@@ -216,13 +244,13 @@ body {
 
 .history__cell {
     padding: 0;
-    font-size: 1rem;
+    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.25rem);
 }
 
 .history__title {
     margin: 0;
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: clamp(2rem, 2vw + 1rem, 2.5rem);
     color: var(--baltic-blue);
     line-height: 1;
 }
@@ -249,13 +277,13 @@ body {
 
 .menu-section__title {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 2vw + 1rem, 2.5rem);
     color: var(--baltic-blue);
 }
 
 .menu-section__subtitle {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 1vw + 0.9rem, 1.25rem);
     color: var(--ink-black);
     margin-top: 8px;
     font-weight: 700;
@@ -309,11 +337,12 @@ body {
     width: 100%;
     max-width: 300px;
     padding: 0;
-    border: 1px solid var(--floral-white);
+    border: 1px solid var(--border-color);
     border-radius: var(--radio-borde);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
     overflow: hidden;
+    background-color: var(--surface-bg);
 }
 
 .card__figure {
@@ -330,13 +359,13 @@ body {
 
 .card__title {
     margin: 12px 8px 4px;
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 0.75vw + 0.9rem, 1.25rem);
     color: var(--baltic-blue);
 }
 
 .card__caption {
     padding: 0 12px 16px;
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 0.5vw + 0.8rem, 0.95rem);
 }
 
 .cta {
@@ -348,13 +377,13 @@ body {
 .cta__title {
     color: var(--floral-white);
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 1.5vw + 1rem, 2rem);
     margin-bottom: 8px;
 }
 
 .cta__text {
     color: var(--floral-white);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.1rem);
 }
 
 .divider {
@@ -378,7 +407,7 @@ body {
 }
 
 .footer__text {
-    color: var(--ink-black);
+     color: var(--text-color);
 }
 
 .footer__link {
@@ -443,8 +472,10 @@ body {
 
 .form__input,
 .form__select {
+    background-color: var(--surface-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     padding: 10px 12px;
-    border: 1px solid #CCCCCC;
     border-radius: 4px;
     font-family: var(--font-body);
     font-size: 1rem;
@@ -498,20 +529,13 @@ body {
     background-color: #CBD5E1;
 }
 
-
-/* MÓVIL*/
 @media (max-width: 767px) {
-
     .header {
         padding: 12px 16px;
     }
 
     .header__logo {
         width: 60px;
-    }
-
-    .header__title {
-        font-size: 1.4rem;
     }
 
     .header__nav {
@@ -523,21 +547,12 @@ body {
         background-attachment: scroll;
     }
 
-    .hero__title {
-        font-size: 2rem;
-    }
-
-    .hero__text {
-        font-size: 1.1rem;
-    }
-
     .history {
         padding: 32px 16px;
     }
 
     .history__cell {
         padding: 10px;
-        font-size: 1rem;
     }
 
     .history__cell--image {
@@ -548,10 +563,6 @@ body {
         width: 100%;
         max-width: 400px;
         height: auto;
-    }
-
-    .history__title {
-        font-size: 2rem;
     }
 
     .menu-section__items {
@@ -602,9 +613,8 @@ body {
     }
 }
 
-/* TABLET*/
 @media (min-width: 768px) {
-    #cellphone :root {
+    :root {
         --spacing: 20px;
     }
 
@@ -613,16 +623,8 @@ body {
         background-attachment: fixed;
     }
 
-    .hero__title {
-        font-size: 2.5rem;
-    }
-
     .history {
         padding: 48px 5%;
-    }
-
-    .history__cell {
-        font-size: 1.1rem;
     }
 
     .form__actions {
@@ -634,14 +636,9 @@ body {
     }
 }
 
-/* DESK*/
 @media (min-width: 1280px) {
     :root {
         --spacing: 32px;
-    }
-
-    .hero__title {
-        font-size: 3rem;
     }
 
     .history {
@@ -661,13 +658,5 @@ body {
 
     .history__cell--image {
         grid-row: span 2;
-    }
-
-    .history__cell {
-        font-size: 1.25rem;
-    }
-
-    .history__title {
-        font-size: 2.5rem;
     }
 }

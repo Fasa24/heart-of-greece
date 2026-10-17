@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Traditional recipes, honest ingredients, and generous food to share around the table.">
+    <meta name="author" content="Abraham Eli, Favio Emiliano, Guillermo Green">
+    <meta name="keywords" content="greek restaurant, greek cuisine, traditional greek food, recipes, mediterranean food">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Heart of Greece">
+    <meta property="og:description" content="Traditional recipes, honest ingredients, and generous food to share around the table.">
+    <meta property="og:image" content="https://fasa24.github.io/heart-of-greece/">
+    <meta property="og:url" content="https://fasa24.github.io/heart-of-greece/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Heart of Greece">
+    <meta name="twitter:description" content="Traditional recipes, honest ingredients, and generous food to share.">
+    <meta name="twitter:image" content="https://fasa24.github.io/heart-of-greece/">
+
+    <title>Heart of Greece</title>
+    <link rel="icon" href="assets/icons/heart-of-greece-square-icon.png">
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="page-layout">
+    <header class="header">
+        <div class="header__brand">
+            <img class="header__logo" src="assets/icons/heart-of-greece-icon.png" alt="HoG Icon">
+            <div class="header__titles">
+                <h1 class="header__title">Heart of Greece</h1>
+                <h2 class="header__subtitle">Καρδιά της Ελλάδας</h2>
+            </div>
+        </div>
+
+        <nav class="header__nav">
+            <a class="header__link" href="pages/menu.html" target="_self" rel="noopener" title="Check our Menu">Menu</a>
+            <a class="header__link" href="pages/reservations.html" target="_self" rel="noopener" title="Come to the Table">Reservations</a>
+            <a class="header__link" href="pages/gallery.html" target="_self" rel="noopener" title="Meet Us">Gallery</a>
+            <a class="header__link" href="pages/contact.html" target="_self" rel="noopener" title="Contact Us">Contact</a>
+            <a class="header__link" href="pages/account.html" target="_self" rel="noopener" title="Account Info">Account</a>
+            <a class="header__link" href="pages/register.html" target="_self" rel="noopener" title="Create your Account">Register</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <h2 class="hero__title">A Taste of Home</h2>
+            <article class="hero__text">
+                <p>
+                    <strong>Traditional recipes, honest ingredients,
+                    and generous food <br> made to be shared around the table.</strong>
+                </p>
+            </article>
+            <a href="pages/reservations.html" class="hero__button">Reserve your table</a>
+        </section>
+
+        <section class="history">
+            <table class="history__table">
+                <tbody>
+                    <tr>
+                        <td rowspan="2" class="history__cell history__cell--image">
+                            <img class="history__image"
+                                 src="assets/img/santorini.png"
+                                 width="400"
+                                 height="auto"
+                                 alt="Greek Landscape"
+                                 loading="lazy">
+                        </td>
+                        <td class="history__cell">
+                            <h2 class="history__title">Our Story</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="history__cell">
+                            <p class="history__text">
+                                Rooted in traditional Greek cooking, <strong>Heart
+                                of Greece</strong> is a place for honest food,
+                                warm hospitality, and good company.
+                                We prepare familiar recipes with quality ingredients
+                                and the same care we believe they deserve.
+                            </p>
+                            <p class="history__text">
+                                Simple food, generously served, and always meant to
+                                be shared.
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="menu-section">
+            <div class="menu-section__header">
+                <h2 class="menu-section__title">Taste the Tradition</h2>
+                <p class="menu-section__subtitle">
+                    A selection of beloved Greek classics, prepared with
+                    time-honored recipes and the flavors of home.
+                </p>
+            </div>
+
+            <div class="mx-auto max-w-6xl px-4">
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+                    <article class="flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+                        <img src="assets/img/moussaka.png" alt="Greek Moussaka" title="Greek Moussaka" loading="lazy" class="aspect-[4/3] w-full object-cover">
+                        <div class="flex-1 p-5">
+                            <h3 class="mb-2 flex items-center justify-between gap-2 text-xl font-semibold">
+                                <span>Classic Moussaka</span>
+                                <span class="rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white">€15</span>
+                            </h3>
+                            <p class="text-gray-500">Layers of roasted eggplant, potatoes, and spiced ground beef, crowned with a rich, golden béchamel sauce.</p>
+                        </div>
+                    </article>
+
+                    <article class="flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+                        <img src="assets/img/chicken-souvlaki.png" alt="Chicken Souvlaki" title="Chicken Souvlaki" loading="lazy" class="aspect-[4/3] w-full object-cover">
+                        <div class="flex-1 p-5">
+                            <h3 class="mb-2 flex items-center justify-between gap-2 text-xl font-semibold">
+                                <span>Chicken Souvlaki</span>
+                                <span class="rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white">€14</span>
+                            </h3>
+                            <p class="text-gray-500">Tender pieces of grilled chicken marinated with olive oil, lemon, and oregano, served with warm pita and creamy tzatziki.</p>
+                        </div>
+                    </article>
+
+                    <article class="flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+                        <img src="assets/img/greek-baklava.png" alt="Baklava" title="Baklava" loading="lazy" class="aspect-[4/3] w-full object-cover">
+                        <div class="flex-1 p-5">
+                            <h3 class="mb-2 flex items-center justify-between gap-2 text-xl font-semibold">
+                                <span>Baklava</span>
+                                <span class="rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white">€7</span>
+                            </h3>
+                            <p class="text-gray-500">Layers of crisp phyllo pastry filled with chopped nuts and warm spices, baked until golden and finished with a fragrant sweet syrup.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <button class="menu-section__button">View Full Menu</button>
+        </section>
+
+        <section class="cta">
+            <h2 class="cta__title">Come to the Table</h2>
+
+            <p class="cta__text">
+                Reserve your table and enjoy traditional Greek cooking,
+                warm hospitality, and a meal made to be shared.
+            </p>
+        </section>
+
+        <hr class="divider">
+    </main>
+
+    <footer class="footer">
+        <table class="footer__table" cellpadding="15">
+            <tbody>
+                <tr>
+                    <td class="footer__cell">
+                        <p class="footer__text">© Heart of Greece 2026</p>
+                    </td>
+                    <td class="footer__cell">
+                        <p class="footer__text">Privacy Policy</p>
+                    </td>
+                    <td class="footer__cell">
+                        <p class="footer__text">Terms of Service</p>
+                    </td>
+                    <td class="footer__cell">
+                        <a class="footer__link" href="mailto:contact@heartofgreece.com">Contact Us</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+
+</body>
+</html>
