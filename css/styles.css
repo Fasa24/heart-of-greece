@@ -1,3 +1,11 @@
+/* 1. Variables     :root */
+/* 2. Base          reset */
+/* 3. Layout        grid  */
+/* 4. Components    BEM   */
+/* 5. Utilities           */
+/* 6. Responsive & a11y   */
+
+/* 1. Variables */
 @font-face {
     font-family: "Cormorant Garamond";
     src: url("../assets/files/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
@@ -54,6 +62,7 @@
 }
 */
 
+/* 2. Base */
 * {
     margin: 0;
     padding: 0;
@@ -71,6 +80,14 @@ body {
     background-color: var(--page-bg);
 }
 
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: #DDDDDD;
+    margin: 0;
+}
+
+/* 3. Layout */
 .page-layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -106,6 +123,29 @@ body {
     padding: 20px 0;
 }
 
+.history {
+    background-color: var(--surface-bg);
+    width: 100%;
+    padding: var(--spacing-l) var(--spacing);
+}
+
+.menu-section {
+    padding: 40px 20px;
+}
+
+.cta {
+    background-color: var(--olive-leaf);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.register {
+    width: min(100% - 32px, 650px);
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+/* 4. Components */
 .header__brand {
     display: flex;
     align-items: center;
@@ -204,25 +244,19 @@ body {
     border-radius: var(--radio-borde);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: background-color 0.2s ease, transform 0.2s ease;
-}
 
-.hero__button:hover {
-    background-color: #033A59;
-    transform: translateY(-3px) scale(1.05) rotate(-1deg);
-}
+    &:hover {
+        background-color: #033A59;
+        transform: translateY(-3px) scale(1.05) rotate(-1deg);
+    }
 
-.hero__button:active {
-    transform: translateY(0) scale(0.98) rotate(0deg);
-}
+    &:active {
+        transform: translateY(0) scale(0.98) rotate(0deg);
+    }
 
-.hero__button:focus-visible {
-    outline: 3px solid var(--floral-white);
-}
-
-.history {
-    background-color: var(--surface-bg);
-    width: 100%;
-    padding: var(--spacing-l) var(--spacing);
+    &:focus-visible {
+        outline: 3px solid var(--floral-white);
+    }
 }
 
 .history__table {
@@ -264,10 +298,6 @@ body {
     height: auto;
     border-radius: var(--radio-borde);
     object-fit: cover;
-}
-
-.menu-section {
-    padding: 40px 20px;
 }
 
 .menu-section__header {
@@ -386,12 +416,6 @@ body {
     font-size: clamp(0.9rem, 0.5vw + 0.8rem, 0.95rem);
 }
 
-.cta {
-    background-color: var(--olive-leaf);
-    padding: 40px 20px;
-    text-align: center;
-}
-
 .cta__title {
     color: var(--floral-white);
     font-family: var(--font-heading);
@@ -402,13 +426,6 @@ body {
 .cta__text {
     color: var(--floral-white);
     font-size: clamp(1rem, 0.5vw + 0.9rem, 1.1rem);
-}
-
-.divider {
-    border: 0;
-    height: 1px;
-    background-color: #DDDDDD;
-    margin: 0;
 }
 
 .footer__table {
@@ -432,16 +449,10 @@ body {
     color: var(--baltic-blue);
     text-decoration: none;
     font-weight: bold;
-}
 
-.footer__link:hover {
-    text-decoration: underline;
-}
-
-.register {
-    width: min(100% - 32px, 650px);
-    margin: 24px auto;
-    padding: 0 16px;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .register__title {
@@ -478,10 +489,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 6px;
-}
 
-.form__group:last-child {
-    margin-bottom: 0;
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .form__label {
@@ -498,13 +509,12 @@ body {
     font-family: var(--font-body);
     font-size: 1rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
 
-.form__input:focus,
-.form__select:focus {
-    border-color: var(--baltic-blue);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(7, 89, 133, 0.2);
+    &:focus {
+        border-color: var(--baltic-blue);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(7, 89, 133, 0.2);
+    }
 }
 
 .form__help {
@@ -532,23 +542,25 @@ body {
 .form__button--submit {
     background-color: var(--baltic-blue);
     color: var(--floral-white);
-}
 
-.form__button--submit:hover {
-    background-color: #033A59;
+    &:hover {
+        background-color: #033A59;
+    }
 }
 
 .form__button--reset {
     background-color: #E2E8F0;
     color: var(--ink-black);
+
+    &:hover {
+        background-color: #CBD5E1;
+    }
 }
 
-.form__button--reset:hover {
-    background-color: #CBD5E1;
-}
+/* 5. Utilities (empty) */
 
+/* 6. Responsive & a11y */
 @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
@@ -558,135 +570,136 @@ body {
         transition-duration: 0.01ms !important;
         transform: translateY(-1px) scale(1.01) rotate(0deg) !important;
     }
+}
 
-    @media (max-width: 767px) {
-        .header {
-            padding: 12px 16px;
-        }
-
-        .header__logo {
-            width: 60px;
-        }
-
-        .header__nav {
-            gap: 12px;
-        }
-
-        .hero {
-            padding: 48px 16px;
-            background-attachment: scroll;
-        }
-
-        .history {
-            padding: 32px 16px;
-        }
-
-        .history__cell {
-            padding: 10px;
-        }
-
-        .history__cell--image {
-            width: auto;
-        }
-
-        .history__image {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-        }
-
-        .menu-section__items {
-            padding: 12px 0;
-            gap: 16px;
-        }
-
-        .menu-section__items .card {
-            flex: 1 1 100%;
-            max-width: 100%;
-            width: 100%;
-            height: auto;
-        }
-
-        .card {
-            width: 100%;
-            height: auto;
-        }
-
-        .card__figure {
-            height: auto;
-        }
-
-        .card__image {
-            height: 200px;
-        }
-
-        .card__caption {
-            padding-bottom: 16px;
-        }
-
-        .register {
-            margin: 24px auto;
-            padding: 0 16px;
-        }
-
-        .form__actions {
-            flex-direction: column;
-        }
-
-        .form__button {
-            width: 100%;
-        }
-
-        .footer__table {
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+@media (max-width: 767px) {
+    .header {
+        padding: 12px 16px;
     }
 
-    @media (min-width: 768px) {
-        :root {
-            --spacing: 20px;
-        }
-
-        .hero {
-            padding: 48px 24px;
-            background-attachment: fixed;
-        }
-
-        .history {
-            padding: 48px 5%;
-        }
-
-        .form__actions {
-            flex-direction: row;
-        }
-
-        .form__button {
-            width: auto;
-        }
+    .header__logo {
+        width: 60px;
     }
 
-    @media (min-width: 1280px) {
-        :root {
-            --spacing: 32px;
-        }
-
-        .history {
-            padding: 60px 10%;
-        }
-
-        .history__table tbody {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: var(--spacing);
-            align-items: center;
-        }
-
-        .history__table tr {
-            display: contents;
-        }
-
-        .history__cell--image {
-            grid-row: span 2;
-        }
+    .header__nav {
+        gap: 12px;
     }
+
+    .hero {
+        padding: 48px 16px;
+        background-attachment: scroll;
+    }
+
+    .history {
+        padding: 32px 16px;
+    }
+
+    .history__cell {
+        padding: 10px;
+    }
+
+    .history__cell--image {
+        width: auto;
+    }
+
+    .history__image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .menu-section__items {
+        padding: 12px 0;
+        gap: 16px;
+    }
+
+    .menu-section__items .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .card__figure {
+        height: auto;
+    }
+
+    .card__image {
+        height: 200px;
+    }
+
+    .card__caption {
+        padding-bottom: 16px;
+    }
+
+    .register {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+
+    .form__actions {
+        flex-direction: column;
+    }
+
+    .form__button {
+        width: 100%;
+    }
+
+    .footer__table {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --spacing: 20px;
+    }
+
+    .hero {
+        padding: 48px 24px;
+        background-attachment: fixed;
+    }
+
+    .history {
+        padding: 48px 5%;
+    }
+
+    .form__actions {
+        flex-direction: row;
+    }
+
+    .form__button {
+        width: auto;
+    }
+}
+
+@media (min-width: 1280px) {
+    :root {
+        --spacing: 32px;
+    }
+
+    .history {
+        padding: 60px 10%;
+    }
+
+    .history__table tbody {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: var(--spacing);
+        align-items: center;
+    }
+
+    .history__table tr {
+        display: contents;
+    }
+
+    .history__cell--image {
+        grid-row: span 2;
+    }
+}
