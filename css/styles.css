@@ -472,10 +472,16 @@ body {
     gap: 20px;
 }
 
+padding: 20px;
+}
+
 .form__fieldset {
     border: 1px solid #CCCCCC;
     border-radius: var(--radio-borde);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .form__legend {
@@ -485,14 +491,9 @@ body {
 }
 
 .form__group {
-    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     gap: 6px;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
 }
 
 .form__label {
@@ -561,6 +562,7 @@ body {
 
 /* 6. Responsive & a11y */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
