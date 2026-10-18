@@ -472,9 +472,6 @@ body {
     gap: 20px;
 }
 
-padding: 20px;
-}
-
 .form__fieldset {
     border: 1px solid #CCCCCC;
     border-radius: var(--radio-borde);
