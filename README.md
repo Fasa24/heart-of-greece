@@ -8,6 +8,12 @@ Traditional recipes, honest ingredients, and generous food made to be shared aro
 
 **Heart of Greece** is a static website built with HTML, CSS, and JavaScript.
 
+## 📚 Table of Contents
+
+1. [Description](#-description)
+2. [Getting Started](#️-getting-started)
+3. [Project Structure](#️-project-structure)
+
 ## 📖 Description
 
 Rooted in traditional Greek cooking, **Heart of Greece** is a place for honest food, warm hospitality, and good company.
@@ -15,12 +21,6 @@ Rooted in traditional Greek cooking, **Heart of Greece** is a place for honest f
 We prepare familiar recipes with quality ingredients and the same care we believe they deserve.
 
 Simple food, generously served, and always meant to be shared.
-
-## 📚 Table of Contents
-
-1. [Description](#-description)
-2. [Getting Started](#️-getting-started)
-3. [Project Structure](#️-project-structure)
 
 ## ⬇️ Getting Started
 
@@ -41,10 +41,13 @@ Once the repository has been cloned, the project can be viewed using either of t
 | File/Directory | Description |
 | -------------- | ----------- |
 | `index.html` | Main webpage for Heart of Greece |
+| `indexBootstrap.html` | Replica of index.html using Bootstrap |
+| `indexTailwind.html` | Replica of index.html using Tailwind |
 | `assets/files/` | General assets |
 | `assets/icons/` | Icons and icon-related assets |
 | `assets/img/` | Images and other visual assets |
 | `css/` | Stylesheets used to design the website |
+| `js/` | Javascript used on the website |
 | `pages/` | Additional website pages |
 | `.gitignore` | Specifies files and directories that should not be tracked by Git |
 | `README.md` | Project overview and documentation |
