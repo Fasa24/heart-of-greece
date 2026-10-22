@@ -474,11 +474,7 @@ body {
     font-size: 1rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
-    &:focus {
-        border-color: var(--baltic-blue);
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(7, 89, 133, 0.2);
-    }
+    
 }
 
 .form__help {
@@ -500,21 +496,27 @@ body {
     font-weight: bold;
     border: none;
     width: 100%;
-    transition: background-color 0.2s ease;
+                
+    transition: background-color 0.2s ease,box-shadow 0.2s ease;
+    
+    &:focus-visible { outline: 3px solid var(--olive-leaf); }
 }
 
 .form__button--submit {
     background-color: var(--baltic-blue);
     color: var(--floral-white);
+    
 
     &:hover { background-color: #033A59; }
+ 
 }
 
 .form__button--reset {
     background-color: #E2E8F0;
     color: var(--ink-black);
-
+   
     &:hover { background-color: #CBD5E1; }
+
 }
 
 /* 5. Utilities (empty) */
@@ -596,7 +598,9 @@ body {
         background-attachment: fixed;
     }
 
-    .history { padding: 48px 5%; }
+    .history { padding: 48px 5%; 
+    
+    }
 
     .form__actions {
         flex-direction: row;
