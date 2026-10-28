@@ -43,6 +43,36 @@
     --border-color: #CCCCCC;
 }
 
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --ink-black: #E5E7EB;
+    --page-bg: #111827;
+    --surface-bg: #1F2937;
+    --text-color: #E5E7EB;
+    --muted-text: #B0BAC8;
+    --border-color: #4B5563;
+}
+
+.button-theme {
+    background: transparent;
+    border: 2px solid var(--floral-white);
+    color: var(--floral-white);
+    border-radius: var(--radio-borde);
+    padding: 6px 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: var(--floral-white);
+        color: var(--baltic-blue);
+    }
+
+    &:focus-visible { outline: 3px solid var(--floral-white); outline-offset: 2px; }
+}
+
 /* Dark mode
 @media (prefers-color-scheme: dark) {
     :root {
