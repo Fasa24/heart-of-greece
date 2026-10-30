@@ -43,16 +43,18 @@
     --border-color: #CCCCCC;
 }
 
-:root[data-theme="dark"] {
+body.dark-mode {
     color-scheme: dark;
 
-    --ink-black: #E5E7EB;
     --page-bg: #111827;
     --surface-bg: #1F2937;
     --text-color: #E5E7EB;
+    --ink-black: #E5E7EB;
     --muted-text: #B0BAC8;
     --border-color: #4B5563;
+    --accent-text: #7DD3FC;
 }
+
 
 .button-theme {
     background: transparent;
