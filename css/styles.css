@@ -53,6 +53,9 @@ body.dark-mode {
     --muted-text: #B0BAC8;
     --border-color: #4B5563;
     --accent-text: #7DD3FC;
+
+    --bs-body-color: var(--text-color);
+    --bs-body-bg: var(--page-bg);
 }
 
 
@@ -444,7 +447,10 @@ body {
 
 .footer__cell { padding: 0 15px; }
 
-.footer__text { color: var(--text-color); }
+.footer__text { 
+    color: var(--text-color);
+    margin: 0;
+}
 
 .footer__link {
     color: var(--baltic-blue);
