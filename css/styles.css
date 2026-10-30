@@ -342,6 +342,31 @@ body {
     font-weight: 700;
 }
 
+.menu-section__search {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-section__input {
+    background-color: var(--surface-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px 16px;
+    border-radius: var(--radio-borde);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    width: 100%;
+    max-width: 350px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+        outline: none;
+        border-color: var(--baltic-blue);
+        box-shadow: 0 0 0 3px rgba(7, 89, 133, 0.15);
+    }
+}
+
 .menu-section__items {
     display: flex;
     flex-wrap: wrap;
@@ -399,6 +424,10 @@ body {
     background-color: var(--surface-bg);
 
     &:hover { animation: card-zoom 0.4s ease-in-out forwards; }
+}
+
+.card[hidden] {
+    display: none !important;
 }
 
 .card__figure {
