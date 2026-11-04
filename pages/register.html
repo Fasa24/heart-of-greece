@@ -32,7 +32,7 @@
         <h1 class="register__title">Create your Account</h1>
         <p class="register__subtitle">Register to book your table and save your favorite dishes.</p>
 
-        <form class="form" action="#" method="POST">
+        <form class="form" id="register-form" action="#" method="POST" novalidate>
 
             <fieldset class="form__fieldset">
                 <legend class="form__legend">Personal Information</legend>
@@ -40,17 +40,21 @@
                 <div class="form__group">
                     <label class="form__label" for="fullName">Full Name:</label>
                     <input class="form__input" type="text" id="fullName" name="fullName" required minlength="3" placeholder="e.g. Socrates" autofocus>
+                    <span class="form__error" id="fullName-error"></span>
+                
                 </div>
 
                 <div class="form__group">
                     <label class="form__label" for="email">Email Address:</label>
                     <input class="form__input" type="email" id="email" name="email" required placeholder="email@example.com">
+                    <span class="form__error" id="email-error"></span>
                 </div>
 
                 <div class="form__group">
                     <label class="form__label" for="phone">Phone Number:</label>
                     <input class="form__input" type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="2112345678" aria-describedby="phone-help">
                     <small class="form__help" id="phone-help">Enter 10 digits without spaces or special characters (e.g., 2112345678).</small>
+                    <span class="form__error" id="phone-error"></span>
                 </div>
             </fieldset>
 
@@ -66,16 +70,19 @@
                         <option value="gluten-free">Gluten-Free</option>
                         <option value="nut-allergy">Nut Allergy</option>
                     </select>
+                    <span class="form__error" id="diet-error"></span>
                 </div>
 
                 <div class="form__group">
                     <label class="form__label" for="favoriteDish">Favorite Greek Dish (Optional):</label>
                     <input class="form__input" type="text" id="favoriteDish" name="favoriteDish" list="dish-list" placeholder="Choose or type one">
+                    <span class="form__error" id="favoriteDish-error"></span>
                     <datalist id="dish-list">
                         <option value="Classic Moussaka"></option>
                         <option value="Chicken Souvlaki"></option>
                         <option value="Baklava"></option>
                     </datalist>
+                    
                 </div>
             </fieldset>
 
@@ -83,9 +90,11 @@
                 <button class="form__button form__button--submit" type="submit">Create Account</button>
                 <button class="form__button form__button--reset" type="reset">Clear Form</button>
             </div>
+            <p id="register-success" class="form__success" aria-live="polite"></p>
 
         </form>
     </main>
+    <script type="module" src="../js/register.js"></script>
 
 </body>
 </html>
