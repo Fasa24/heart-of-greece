@@ -1,15 +1,419 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Explore the traditional Greek dishes and flavors of Heart of Greece.">
+
     <title>Menu - Heart of Greece</title>
+
     <link rel="icon" href="../assets/icons/heart-of-greece-square-icon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 25px;
+        }
+
+        .menu__header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .menu__title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .menu__subtitle {
+            font-size: 1.1rem;
+        }
+
+        .menu__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        /* Individual Dish Cards */
+        .menu-card {
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .menu-card__image {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .menu-card__content {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .menu-card__title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .menu-card__description {
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .menu-card__price {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .menu {
+                padding: 25px 15px;
+            }
+
+            .menu__title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Menu</h1>
+
+    <header class="header">
+
+        <div class="header__brand">
+            <img class="header__logo"
+                 src="../assets/icons/heart-of-greece-icon.png"
+                 width="80"
+                 height="auto"
+                 alt="Heart of Greece Icon">
+
+            <div class="header__titles">
+                <h1 class="header__title">Heart of Greece</h1>
+                <h2 class="header__subtitle">Καρδιά της Ελλάδας</h2>
+            </div>
+        </div>
+
+        <nav class="header__nav" aria-label="Main Navigation">
+            <a class="header__link" href="../index.html">Home</a>
+            <a class="header__link" href="menu.html" aria-current="page">Menu</a>
+            <a class="header__link" href="reservations.html">Reservations</a>
+            <a class="header__link" href="gallery.html">Gallery</a>
+            <a class="header__link" href="contact.html">Contact</a>
+            <a class="header__link" href="account.html">Account</a>
+            <a class="header__link" href="register.html">Register</a>
+        </nav>
+
+    </header>
+
+    <main class="menu">
+
+        <section class="menu__header">
+            <h2 class="menu__title">Our Greek Menu</h2>
+
+            <p class="menu__subtitle">
+                Discover the flavors of Greece through traditional recipes,
+                fresh ingredients, and authentic Mediterranean cooking.
+            </p>
+        </section>
+
+        <section class="menu__grid" aria-label="Greek dishes">
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/moussaka.png"
+                     alt="Classic Moussaka"
+                     loading="lazy">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Classic Moussaka</h3>
+                    <p class="menu-card__description">
+                        Layers of roasted eggplant, potatoes, seasoned ground beef,
+                        and creamy béchamel sauce.
+                    </p>
+                    <p class="menu-card__price">€15.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/chicken-souvlaki.png"
+                     alt="Chicken Souvlaki"
+                     loading="lazy">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Chicken Souvlaki</h3>
+                    <p class="menu-card__description">
+                        Grilled chicken skewers marinated with olive oil, lemon,
+                        and oregano, served with warm pita and tzatziki.
+                    </p>
+                    <p class="menu-card__price">€14.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/greek-baklava.png"
+                     alt="Greek Baklava"
+                     loading="lazy">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Baklava</h3>
+                    <p class="menu-card__description">
+                        Crispy layers of phyllo pastry filled with chopped nuts
+                        and finished with sweet honey syrup.
+                    </p>
+                    <p class="menu-card__price">€7.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/greek-salad.png"
+                     alt="Traditional Greek Salad"
+                     loading="lazy">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Greek Salad</h3>
+                    <p class="menu-card__description">
+                        Fresh tomatoes, cucumber, red onion, Kalamata olives,
+                        feta cheese, and olive oil.
+                    </p>
+                    <p class="menu-card__price">€10.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/spanakopita.png"
+                     alt="Spanakopita">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Spanakopita</h3>
+                    <p class="menu-card__description">
+                        Traditional phyllo pastry filled with spinach,
+                        feta cheese, and fresh herbs.
+                    </p>
+                    <p class="menu-card__price">€9.00</p>
+                </div>  
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/pastitsio.png"
+                     alt="Greek Pastitsio">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Pastitsio</h3>
+                    <p class="menu-card__description">
+                        Baked Greek pasta with seasoned minced meat
+                        and a rich béchamel topping.
+                    </p>
+                    <p class="menu-card__price">€14.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/gyro-pita.png"
+                     alt="Gyro Pita">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Gyro Pita</h3>
+                    <p class="menu-card__description">
+                        Warm pita bread filled with seasoned meat,
+                        tomatoes, onions, and tzatziki sauce.
+                    </p>
+                    <p class="menu-card__price">€12.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/kleftiko.png"
+                     alt="Lamb Kleftiko">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Lamb Kleftiko</h3>
+                    <p class="menu-card__description">
+                        Slow-cooked lamb with garlic, lemon, herbs,
+                        and tender roasted potatoes.
+                    </p>
+                    <p class="menu-card__price">€19.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/dolmades.png"
+                     alt="Dolmades">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Dolmades</h3>
+                    <p class="menu-card__description">
+                        Grape leaves stuffed with seasoned rice,
+                        fresh herbs, and lemon.
+                    </p>
+                    <p class="menu-card__price">€8.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/keftedes.png"
+                     alt="Greek Keftedes">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Keftedes</h3>
+                    <p class="menu-card__description">
+                        Greek-style seasoned meatballs with herbs,
+                        served with a refreshing yogurt dip.
+                    </p>
+                    <p class="menu-card__price">€11.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/grilled-octopus.png"
+                     alt="Grilled Octopus">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Grilled Octopus</h3>
+                    <p class="menu-card__description">
+                        Tender grilled octopus seasoned with olive oil,
+                        lemon, and Mediterranean herbs.
+                    </p>
+                    <p class="menu-card__price">€18.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/tiropita.png"
+                     alt="Tiropita">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Tiropita</h3>
+                    <p class="menu-card__description">
+                        Golden phyllo pastry filled with a delicious
+                        mixture of feta and Greek cheeses.
+                    </p>
+                    <p class="menu-card__price">€8.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/fasolada.png"
+                     alt="Fasolada">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Fasolada</h3>
+                    <p class="menu-card__description">
+                        Traditional Greek white bean soup with tomatoes,
+                        carrots, celery, and olive oil.
+                    </p>
+                    <p class="menu-card__price">€10.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/saganaki.png"
+                     alt="Saganaki Cheese">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Saganaki</h3>
+                    <p class="menu-card__description">
+                        Pan-fried Greek cheese with a golden crust,
+                        served with fresh lemon.
+                    </p>
+                    <p class="menu-card__price">€9.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/galaktoboureko.png"
+                     alt="Galaktoboureko">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Galaktoboureko</h3>
+                    <p class="menu-card__description">
+                        Creamy semolina custard wrapped in crispy phyllo
+                        pastry and soaked in citrus syrup.
+                    </p>
+                    <p class="menu-card__price">€7.00</p>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img class="menu-card__image"
+                     src="../assets/img/gemista.png"
+                     alt="Gemista">
+
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">Gemista</h3>
+                    <p class="menu-card__description">
+                        Tomatoes and bell peppers stuffed with seasoned rice,
+                        herbs, and Mediterranean vegetables.
+                    </p>
+                    <p class="menu-card__price">€13.00</p>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <table class="footer__table" cellpadding="15">
+            <tbody>
+                <tr>
+                    <td class="footer__cell">
+                        <p class="footer__text">© Heart of Greece 2026</p>
+                    </td>
+                    <td class="footer__cell">
+                        <a class="footer__link" href="mailto:contact@heartofgreece.com">Privacy Policy</a>
+                    </td>
+                    <td class="footer__cell">
+                        <a class="footer__link" href="mailto:contact@heartofgreece.com">Terms of Service</a>
+                    </td>
+                    <td class="footer__cell">
+                        <a class="footer__link" href="mailto:contact@heartofgreece.com">Contact Us</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+
 </body>
 </html>
