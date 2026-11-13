@@ -586,6 +586,12 @@ body {
 
 }
 
+.menu-section__status {
+    text-align: center;
+    color: var(--muted-text);
+    min-height: 1.5em;
+}
+
 /* 5. Utilities (empty) */
 
 /* 6. Responsive & a11y */

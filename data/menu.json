@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Moussaka",
+    "price": 15,
+    "description": "Layers of roasted eggplant, potatoes, and spiced ground beef, crowned with a rich, golden béchamel sauce.",
+    "image": "assets/img/moussaka.png"
+  },
+  {
+    "id": 2,
+    "name": "Chicken Souvlaki",
+    "price": 14,
+    "description": "Tender pieces of grilled chicken marinated with olive oil, lemon, and oregano, served with warm pita and creamy tzatziki.",
+    "image": "assets/img/chicken-souvlaki.png"
+  },
+  {
+    "id": 3,
+    "name": "Baklava",
+    "price": 7,
+    "description": "Layers of crisp phyllo pastry filled with chopped nuts and warm spices, baked until golden and finished with a fragrant sweet syrup.",
+    "image": "assets/img/greek-baklava.png"
+  }
+]

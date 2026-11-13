@@ -28,6 +28,13 @@
 </head>
 
 <body class="page-layout">
+    <script>
+        try {
+            if (JSON.parse(localStorage.getItem("theme")) === "dark")
+                document.body.classList.add("dark-mode");
+        } catch {}
+    </script>
+    
     <header class="header">
         <div class="header__brand">
             <img class="header__logo" src="assets/icons/heart-of-greece-icon.png" alt="HoG Icon">
@@ -36,15 +43,15 @@
                 <h2 class="header__subtitle">Καρδιά της Ελλάδας</h2>
             </div>
         </div>
-        <!--  <nav class="header__nav">  -->
-        <nav class="header__nav" data-bs-theme="dark">
+
+        <nav class="header__nav">
             <a class="header__link" href="pages/menu.html" target="_self" rel="noopener" title="Check our Menu">Menu</a>
             <a class="header__link" href="pages/reservations.html" target="_self" rel="noopener" title="Come to the Table">Reservations</a>
             <a class="header__link" href="pages/gallery.html" target="_self" rel="noopener" title="Meet Us">Gallery</a>
             <a class="header__link" href="pages/contact.html" target="_self" rel="noopener" title="Contact Us">Contact</a>
             <a class="header__link" href="pages/account.html" target="_self" rel="noopener" title="Account Info">Account</a>
             <a class="header__link" href="pages/register.html" target="_self" rel="noopener" title="Create your Account">Register</a>
-            <button class="button-theme" id="button-theme" type="button"aria-pressed="false" aria-label="Switch to dark mode">🌙</button>
+            <button class="button-theme" id="button-theme" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
 
             
         </nav>
@@ -110,29 +117,19 @@
             </div>
 
             <div class="menu-section__items">
-                <article class="card">
-                    <figure class="card__figure">
-                        <img src="assets/img/moussaka.png" width="200" height="auto" alt="Greek Moussaka" loading="lazy" title="Greek Moussaka" class="card__image">
-                        <h3 class="card__title">Classic Moussaka €15</h3>
-                        <figcaption class="card__caption">Layers of roasted eggplant, potatoes, and spiced ground beef, crowned with a rich, golden béchamel sauce.</figcaption>
-                    </figure>
-                </article>
+                <p id="menu-status" class="menu-section__status" aria-live="polite"></p>
 
-                <article class="card">
-                    <figure class="card__figure">
-                        <img src="assets/img/chicken-souvlaki.png" width="200" height="auto" alt="Chicken Souvlaki" loading="lazy" title="Chicken Souvlaki" class="card__image">
-                        <h3 class="card__title">Chicken Souvlaki €14</h3>
-                        <figcaption class="card__caption">Tender pieces of grilled chicken marinated with olive oil, lemon, and oregano, served with warm pita and creamy tzatziki.</figcaption>
-                    </figure>
-                </article>
+<div class="menu-section__items"></div>
 
-                <article class="card">
-                    <figure class="card__figure">
-                        <img src="assets/img/greek-baklava.png" width="200" height="auto" alt="Baklava" loading="lazy" title="Baklava" class="card__image">
-                        <h3 class="card__title">Baklava €7</h3>
-                        <figcaption class="card__caption">Layers of crisp phyllo pastry filled with chopped nuts and warm spices, baked until golden and finished with a fragrant sweet syrup.</figcaption>
-                    </figure>
-                </article>
+<template id="card-template">
+    <article class="card">
+        <figure class="card__figure">
+            <img class="card__image" width="200" loading="lazy" alt="">
+            <h3 class="card__title"></h3>
+            <figcaption class="card__caption"></figcaption>
+        </figure>
+    </article>
+</template>
             </div>
 
             <button class="menu-section__button">View Full Menu</button>
@@ -171,6 +168,8 @@
         </table>
     </footer>
 
+    <script src="js/theme.js" defer></script>
     <script src="js/index.js" defer></script>
+    <script type="module" src="js/menu.js"></script>
 </body>
 </html>
