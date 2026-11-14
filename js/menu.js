@@ -1,4 +1,5 @@
 import { getMenu } from "./api.js";
+import { alertError } from "./ui.js";
 
 const container = document.querySelector(".menu-section__items");
 const status = document.getElementById("menu-status");
@@ -23,21 +24,22 @@ const render = (dishes) => {
 };
 
 async function loadMenu() {
-    status.textContent = "Loading menu...";           
+    status.textContent = "Loading menu...";
 
     try {
         const dishes = await getMenu("data/menu.json");
 
-        if (!dishes.length) {                          
+        if (!dishes.length) {
             status.textContent = "No dishes available right now.";
             return;
         }
 
-        status.textContent = "";                       
+        status.textContent = "";
         render(dishes);
-    } catch (err) {                                    
+    } catch (err) {
         console.error("Menu not loaded:", err.message);
         status.textContent = "We couldn't load the menu. Please try again later.";
+        alertError("We couldn't load the menu. Please try again later.");
     }
 }
 
