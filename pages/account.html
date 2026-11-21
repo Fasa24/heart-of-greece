@@ -4,12 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Account - Heart of Greece</title>
     <link rel="icon" href="../assets/icons/heart-of-greece-square-icon.png">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-    <h1>Account</h1>
+    <script>
+        try {
+            if (JSON.parse(localStorage.getItem("theme")) === "dark")
+                document.body.classList.add("dark-mode");
+        } catch {}
+    </script>
+
+    <header class="header">
+        <a class="header__brand" href="../index.html" target="_self" rel="noopener" aria-label="Heart of Greece Home">
+            <img class="header__logo" src="../assets/icons/heart-of-greece-icon.png" width="80" height="auto" alt="HoG Icon">
+            <div class="header__titles">
+                <h1 class="header__title">Heart of Greece</h1>
+                <h2 class="header__subtitle">Καρδιά της Ελλάδας</h2>
+            </div>
+        </a>
+
+        <nav class="header__nav" aria-label="Main Navigation">
+            <a class="header__link" href="menu.html" target="_self" rel="noopener" title="Check our Menu">Menu</a>
+            <a class="header__link" href="reservations.html" target="_self" rel="noopener" title="Come to the Table">Reservations</a>
+            <a class="header__link" href="gallery.html" target="_self" rel="noopener" title="Meet Us">Gallery</a>
+            <a class="header__link" href="contact.html" target="_self" rel="noopener" title="Contact Us">Contact</a>
+            <a class="header__link" href="pages/register.html" target="_self" rel="noopener" title="Create your Account">Register</a>
+        </nav>
+
+        <button class="button-theme" id="button-theme" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+    </header>
+
+    <script src="../js/theme.js" defer></script>
 </body>
 </html>
