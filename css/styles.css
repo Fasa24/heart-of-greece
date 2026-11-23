@@ -584,6 +584,7 @@ body.dark-mode .menu-section__button:hover {
 }
 
 .form__button {
+    font-family: var(--font-body);
     padding: 10px 20px;
     border-radius: var(--border-radius);
     font-size: 1rem;
