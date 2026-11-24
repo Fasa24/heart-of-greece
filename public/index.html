@@ -23,8 +23,8 @@
     <meta name="twitter:image" content="https://fasa24.github.io/heart-of-greece/">
 
     <title>Heart of Greece</title>
-    <link rel="icon" href="assets/icons/heart-of-greece-square-icon.png">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="../assets/icons/heart-of-greece-square-icon.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="page-layout">
@@ -38,7 +38,7 @@
 
     <header class="header">
         <a class="header__brand" href="index.html" target="_self" aria-label="Heart of Greece Home">
-            <img class="header__logo" src="assets/icons/heart-of-greece-icon.png" width="80" alt="HoG Icon">
+            <img class="header__logo" src="../assets/icons/heart-of-greece-icon.png" width="80" alt="HoG Icon">
             <div class="header__titles">
                 <h1 class="header__title">Heart of Greece</h1>
                 <h2 class="header__subtitle">Καρδιά της Ελλάδας</h2>
@@ -77,7 +77,7 @@
                     <tr>
                         <td rowspan="2" class="history__cell history__cell--image">
                             <img class="history__image"
-                                 src="assets/img/santorini.png"
+                                 src="../assets/img/santorini.png"
                                  width="400"
                                  height="auto"
                                  alt="Greek Landscape"
@@ -121,6 +121,38 @@
             <div class="menu-section__items">
                 <p id="menu-status" class="menu-section__status" aria-live="polite"></p>
             </div>
+
+            <form class="form" id="add-dish-form">
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Add New Dish</legend>
+
+                    <div class="form__group">
+                        <label class="form__label" for="dish-name">Dish Name:</label>
+                        <input class="form__input" type="text" id="dish-name" name="name" required>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="dish-price">Price:</label>
+                        <input class="form__input" type="number" id="dish-price" name="price" step="0.01" min="0.01" required>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="dish-description">Description:</label>
+                        <input class="form__input" type="text" id="dish-description" name="description" required>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="dish-image">Image Path:</label>
+                        <input class="form__input" type="text" id="dish-image" name="image" value="../assets/img/santorini.png">
+                    </div>
+
+                    <p id="dish-form-error" class="form__error" aria-live="polite"></p>
+
+                    <div class="form__actions">
+                        <button class="form__button form__button--submit" type="submit">Add Dish</button>
+                    </div>
+                </fieldset>
+            </form>
 
             <template id="card-template">
                 <article class="card">
@@ -169,7 +201,6 @@
     </footer>
 
     <script src="js/theme.js" defer></script>
-    <script src="js/index.js" defer></script>
     <script type="module" src="js/menu.js"></script>
 </body>
 

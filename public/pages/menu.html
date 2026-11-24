@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore the traditional Greek dishes and flavors of Heart of Greece.">
+
+    <title>Menu - Heart of Greece</title>
+
+    <link rel="icon" href="../../assets/icons/heart-of-greece-square-icon.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="page-layout">
+    <script>
+        try {
+            if (JSON.parse(localStorage.getItem("theme")) === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        } catch {}
+    </script>
+
+    <header class="header">
+        <a class="header__brand" href="../index.html" target="_self" rel="noopener" aria-label="Heart of Greece Home">
+            <img class="header__logo" src="../../assets/icons/heart-of-greece-icon.png" width="80" height="auto" alt="HoG Icon">
+            <div class="header__titles">
+                <h1 class="header__title">Heart of Greece</h1>
+                <h2 class="header__subtitle">Καρδιά της Ελλάδας</h2>
+            </div>
+        </a>
+
+        <nav class="header__nav" aria-label="Main Navigation">
+            <a class="header__link" href="menu.html" target="_self" rel="noopener" title="Check our Menu">Menu</a>
+            <a class="header__link" href="reservations.html" target="_self" rel="noopener" title="Come to the Table">Reservations</a>
+            <a class="header__link" href="gallery.html" target="_self" rel="noopener" title="Meet Us">Gallery</a>
+            <a class="header__link" href="contact.html" target="_self" rel="noopener" title="Contact Us">Contact</a>
+            <a class="header__link" href="account.html" target="_self" rel="noopener" title="Account Info">Account</a>
+            <a class="header__link" href="register.html" target="_self" rel="noopener" title="Create your Account">Register</a>
+        </nav>
+
+        <button class="button-theme" id="button-theme" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+    </header>
+
+    <main class="main">
+        <section class="menu-section">
+            <div class="menu-section__header">
+                <h2 class="menu-section__title">Our Greek Menu</h2>
+                <p class="menu-section__subtitle">
+                    Discover the flavors of Greece through traditional recipes,
+                    fresh ingredients, and authentic Mediterranean cooking.
+                </p>
+                <div class="menu-section__search">
+                    <input type="text" id="search" class="menu-section__input" placeholder="Search dishes...">
+                </div>
+            </div>
+
+            <div class="menu-section__items">
+                <p id="menu-status" class="menu-section__status" aria-live="polite"></p>
+            </div>
+
+            <template id="card-template">
+                <article class="card">
+                    <figure class="card__figure">
+                        <img class="card__image" width="200" loading="lazy" alt="">
+                        <h3 class="card__title"></h3>
+                        <figcaption class="card__caption"></figcaption>
+                    </figure>
+                </article>
+            </template>
+        </section>
+
+        <hr class="divider">
+    </main>
+
+    <footer class="footer">
+        <table class="footer__table">
+            <tbody>
+                <tr>
+                    <td class="footer__cell">
+                        <p class="footer__text">© Heart of Greece 2026</p>
+                    </td>
+                    <td class="footer__cell">
+                        <a class="footer__link" href="mailto:contact@heartofgreece.com">Privacy Policy</a>
+                    </td>
+                    <td class="footer__cell">
+                        <a class="footer__link" href="mailto:contact@heartofgreece.com">Terms of Service</a>
+                    </td>
+                    <td class="footer__cell">
+                        <a class="footer__link" href="mailto:contact@heartofgreece.com">Contact Us</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+
+    <script src="../js/theme.js" defer></script>
+    <script type="module" src="../js/menu.js"></script>
+</body>
+
+</html>

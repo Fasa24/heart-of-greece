@@ -16,9 +16,7 @@ export function clearErrors() {
     });
 }
 
-
-
-import Swal from "../node_modules/sweetalert2/dist/sweetalert2.esm.all.js";
+import Swal from "../../node_modules/sweetalert2/dist/sweetalert2.esm.all.js";
 
 const themeOptions = () =>
     document.body.classList.contains("dark-mode")
