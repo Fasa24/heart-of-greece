@@ -103,7 +103,7 @@ return [
         'id' => 15,
         'name' => 'Galaktoboureko',
         'price' => 7,
-        'description': 'Creamy semolina custard wrapped in crispy phyllo pastry and soaked in citrus syrup.',
+        'description' =>  'Creamy semolina custard wrapped in crispy phyllo pastry and soaked in citrus syrup.',
         'image' => '',
     ],
     [

@@ -16,3 +16,4 @@ export async function createDish(dish) {
     if (!res.ok) throw new Error(data.error ?? "Failed to create dish");
     return data;
 }
+

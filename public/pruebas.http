@@ -1,0 +1,12 @@
+@base = http://localhost:8000/api
+POST {{base}}/menu.php
+Content-Type: application/json
+
+{
+  "name": "Greek Coffee",
+  "price": 6,
+  "description": "Traditional Description bleh",
+  "image": "/assets/img/chicken-souvlaki.png"
+}
+
+

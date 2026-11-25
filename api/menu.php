@@ -1,83 +1,170 @@
+
 <?php
 
-require __DIR__ . '/helpers.php';
-
-$jsonPath = __DIR__ . '/data/menu.json';
-
-if (!file_exists($jsonPath)) {
-    $initialMenu = require __DIR__ . '/data/menu.php';
-    file_put_contents($jsonPath, json_encode($initialMenu, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-}
-
-$menu = json_decode(file_get_contents($jsonPath), true);
-if (!is_array($menu)) {
-    $menu = require __DIR__ . '/data/menu.php';
-}
+require_once __DIR__ . '/helpers.php';
+require_once __DIR__ . '/db.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-if ($method === 'GET') {
-    if (isset($_GET['id'])) {
-        $id = (int) $_GET['id'];
-        foreach ($menu as $item) {
-            if ((int) $item['id'] === $id) {
-                responder($item, 200);
+try {
+    $pdo = conectar();
+
+    /*
+    |--------------------------------------------------------------------------
+    | GET: consultar platillos
+    |--------------------------------------------------------------------------
+    */
+    if ($method === 'GET') {
+
+        if (isset($_GET['id'])) {
+            $id = (int) $_GET['id'];
+
+            if ($id <= 0) {
+                responder(['error' => 'Invalid dish ID'], 422);
             }
+
+            $stmt = $pdo->prepare(
+                'SELECT id, name, price, description, image
+                 FROM productos
+                 WHERE id = :id'
+            );
+
+            $stmt->execute(['id' => $id]);
+
+            $dish = $stmt->fetch();
+
+            if (!$dish) {
+                responder(['error' => 'Dish not found'], 404);
+            }
+
+            $dish['id'] = (int) $dish['id'];
+            $dish['price'] = (float) $dish['price'];
+
+            responder($dish);
         }
-        responder(['error' => 'Dish not found'], 404);
-    }
 
-    responder($menu, 200);
-}
+        $stmt = $pdo->query(
+            'SELECT id, name, price, description, image
+             FROM productos
+             ORDER BY id'
+        );
 
-if ($method === 'POST') {
-    $input = json_decode(file_get_contents('php://input'), true);
+        $menu = $stmt->fetchAll();
 
-    if (!is_array($input)) {
-        responder(['error' => 'Invalid JSON payload'], 422);
-    }
-
-    $name = trim($input['name'] ?? '');
-    $price = $input['price'] ?? null;
-    $description = trim($input['description'] ?? '');
-    $image = trim($input['image'] ?? '');
-
-    if (strlen($name) < 3) {
-        responder(['error' => 'Name must be at least 3 characters long'], 422);
-    }
-
-    if (!is_numeric($price) || (float) $price <= 0) {
-        responder(['error' => 'Price must be a positive number'], 422);
-    }
-
-    if (strlen($description) < 5) {
-        responder(['error' => 'Description must be at least 5 characters long'], 422);
-    }
-
-    if ($image === '') {
-        $image = '../assets/img/santorini.png';
-    }
-
-    $maxId = 0;
-    foreach ($menu as $item) {
-        if ((int) $item['id'] > $maxId) {
-            $maxId = (int) $item['id'];
+        foreach ($menu as &$dish) {
+            $dish['id'] = (int) $dish['id'];
+            $dish['price'] = (float) $dish['price'];
         }
+
+        unset($dish);
+
+        responder($menu);
     }
 
-    $newDish = [
-        'id' => $maxId + 1,
-        'name' => $name,
-        'price' => (float) $price,
-        'description' => $description,
-        'image' => $image,
-    ];
+    /*
+    |--------------------------------------------------------------------------
+    | POST: crear platillo
+    |--------------------------------------------------------------------------
+    */
+    if ($method === 'POST') {
 
-    $menu[] = $newDish;
+        $input = leerJson();
+        $dish = validarPlatillo($input);
 
-    file_put_contents($jsonPath, json_encode($menu, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+       
 
-    responder($newDish, 201);
+        if ($dish['image'] === '') {
+            $dish['image'] = '/assets/img/santorini.png';
+        }
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO productos
+                (name, price, description, image)
+             VALUES
+                (:name, :price, :description, :image)'
+        );
+
+        $stmt->execute($dish);
+
+        $dish['id'] = (int) $pdo->lastInsertId();
+
+        responder($dish, 201);
+    }
+
+
+    if ($method === 'PUT') {
+
+        $id = (int) ($_GET['id'] ?? 0);
+
+        if ($id <= 0) {
+            responder(['error' => 'Dish ID is required'], 422);
+        }
+
+        $input = leerJson();
+        $dish = validarPlatillo($input);
+
+        $check = $pdo->prepare(
+            'SELECT id FROM productos WHERE id = :id'
+        );
+
+        $check->execute(['id' => $id]);
+
+        if (!$check->fetch()) {
+            responder(['error' => 'Dish not found'], 404);
+        }
+
+        $stmt = $pdo->prepare(
+            'UPDATE productos
+             SET name = :name,
+                 price = :price,
+                 description = :description,
+                 image = :image
+             WHERE id = :id'
+        );
+
+        $dish['id'] = $id;
+
+        $stmt->execute($dish);
+
+        responder($dish, 200);
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | DELETE: eliminar platillo
+    |--------------------------------------------------------------------------
+    */
+    if ($method === 'DELETE') {
+
+        $id = (int) ($_GET['id'] ?? 0);
+
+        if ($id <= 0) {
+            responder(['error' => 'Dish ID is required'], 422);
+        }
+
+        $stmt = $pdo->prepare(
+            'DELETE FROM productos WHERE id = :id'
+        );
+
+        $stmt->execute(['id' => $id]);
+
+        if ($stmt->rowCount() === 0) {
+            responder(['error' => 'Dish not found'], 404);
+        }
+
+        http_response_code(204);
+        exit;
+    }
+
+    header('Allow: GET, POST, PUT, DELETE');
+
+    responder(['error' => 'Method not allowed'], 405);
+
+} catch (PDOException $e) {
+
+    error_log($e->getMessage());
+
+    responder([
+        'error' => 'Database error'
+    ], 500);
 }
-
-responder(['error' => 'Method not allowed'], 405);
